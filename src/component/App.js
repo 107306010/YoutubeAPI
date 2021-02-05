@@ -21,7 +21,7 @@ class App extends React.Component{
                 part: "snippet",
                 maxResults: 5,
                 type: 'video',
-                key: "AIzaSyAJ15ZctzaGVT-Gk8Zn0c8o_PTi92I6jP8",
+                key: process.env.REACT_APP_KEY,
                 q: term,
             }
         })
