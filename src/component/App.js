@@ -2,7 +2,8 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
-import YTapi from './Youtube';
+import axios from 'axios';
+require('dotenv').config();
 
 class App extends React.Component{
 
@@ -15,9 +16,13 @@ class App extends React.Component{
     
     onTermSubmit = async (term) => {
         // console.log(term)
-        const res = await YTapi.get('/search', {
+        const res = await axios.get("https://www.googleapis.com/youtube/v3/search", {
             params: {
-                q: term
+                part: "snippet",
+                maxResults: 5,
+                type: 'video',
+                key: process.env.REACT_APP_KEY,
+                q: term,
             }
         })
         this.setState({
