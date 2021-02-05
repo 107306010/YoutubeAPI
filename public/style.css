@@ -4,3 +4,10 @@
 .list-group-item {
   cursor: pointer;
 }
+.list-group-item:hover {
+  background-color: rgb(241, 241, 241);
+}
+.description {
+  font-size: 12px;
+  margin-bottom: 0;
+}

@@ -4,12 +4,15 @@ const VideoItem = ({ video,onVideoSelect }) => {
     return (
         <div className="list-group-item" onClick={()=>onVideoSelect(video)}>
             <div className="row">
-                <div className="col-4 p-0">
-                    <img src={video.snippet.thumbnails.medium.url} className="image"/>
+                <div className="col-5 p-0 d-flex align-items-center">
+                    <img src={video.snippet.thumbnails.medium.url}
+                        className="image"
+                        alt={video.snippet.title}
+                    />
                 </div>
                             
-                <div className="col-8">
-                    <h5 className="title">{video.snippet.title}</h5>
+                <div className="col-7 d-flex align-items-center">
+                    <div className="text">{video.snippet.title}</div>
                 </div>
             </div>
         </div>
